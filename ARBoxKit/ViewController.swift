@@ -58,21 +58,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     ///TabGesture
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        //let touch = touches.first
-        //let location = touch?.location(in: sceneView)
-        
-//        let hitResults = sceneView.hitTest(location!, types: .featurePoint)
-//
-//        if let hitTestResult = hitResults.first {
-//            let transform = hitTestResult.worldTransform
-//
-            print("Touch")
-            //let position = SCNVector3(x: transform.columns.3.x , y: transform.columns.3.y, z: transform.columns.3.z)
-
-            let positionTwo = SCNVector3(x: Float(self.motionManager.accelerometerData?.acceleration.x ?? 0),
-                                         y: Float(self.motionManager.accelerometerData?.acceleration.y ?? 0),
-                                         z: Float(self.motionManager.accelerometerData?.acceleration.z ?? 0))
-        
         let touch = touches.first
         let location = touch?.location(in: sceneView)
         
@@ -94,9 +79,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             
             sceneView.scene.rootNode.addChildNode(geometryNode)
         }
-        
-
-        //}
         
     }
     
