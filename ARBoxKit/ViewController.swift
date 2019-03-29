@@ -43,7 +43,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
-
+        configuration.planeDetection = [.horizontal, .vertical]
+        configuration.environmentTexturing = .automatic
         // Run the view's session
         sceneView.session.run(configuration)
     }
@@ -70,7 +71,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             let geometry: SCNGeometry
             geometry = SCNPyramid(width:1.0, height:1.0, length:1.0)
             geometry.materials.first?.diffuse.contents = UIColor.red
-            
             
             let geometryNode = SCNNode(geometry: geometry)
             geometryNode.position = positionTwo
